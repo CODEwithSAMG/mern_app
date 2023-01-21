@@ -1,12 +1,12 @@
-const dotenv = require("dotenv")
-const express = require("express");
+const dotenv = require('dotenv')
+const express = require('express');
+
 const app = express();
 
 dotenv.config({ path: './config.env' })
+require('./db/conn')
 
-const DB = process.env.DATABASE;
 const PORT = process.env.PORT
-
 
 const middleware = (req, res, next) => {
   console.log("hello from middleware");
